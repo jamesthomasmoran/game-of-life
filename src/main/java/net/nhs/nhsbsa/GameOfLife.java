@@ -49,6 +49,8 @@ public class GameOfLife
     }
 
 
+
+
     public List<Cell> getAliveNeighbours(Cell primary) {
             List <Cell> neighbours = primary.getNeighbours();
             List<Cell> aliveNeighbours = new ArrayList<Cell>();
@@ -59,5 +61,9 @@ public class GameOfLife
                 }
             }
         return aliveNeighbours;
+    }
+
+    public boolean has2OrLessAliveNeighbours(Cell cell) {
+            return getAliveNeighbours(cell).size() <= 2;
     }
 }

@@ -104,4 +104,12 @@ public class GOLTest
         assertThat(gOL.getAliveNeighbours(new Cell(6,7)).toString(), is(aliveNeighbours2.toString()));
     }
 
+    @Test
+    public void checkIfCellHasLessThan2Neighbours(){
+        GameOfLife gOL = new GameOfLife(new Cell(1,1),new Cell(1,2),new Cell(2,2));
+
+        assertThat(gOL.has2OrLessAliveNeighbours(new Cell(1,1)), is(true));
+        assertThat(gOL.has2OrLessAliveNeighbours(new Cell(2,1)), is(false));
+    }
+
 }
