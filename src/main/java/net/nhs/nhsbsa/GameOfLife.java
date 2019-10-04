@@ -78,4 +78,8 @@ public class GameOfLife
     public boolean has3AliveNeighbours(Cell cell) {
         return getAliveNeighbours(cell).size() == 3;
     }
+
+    public boolean has2OrLessAliveNeighboursAndIsAlive(Cell cell) {
+            return has2OrLessAliveNeighbours(cell) && getCellState(cell.getXCoord(),cell.getYCoord()) == 1;
+    }
 }
