@@ -60,4 +60,11 @@ public class GOLTest
 
     }
 
+    @Test
+    public void addCellToGameGrid(){
+        GameOfLife gOL = new GameOfLife(new Cell(6,7));
+
+        assertThat(gOL.getCellState(6,7), is(1));
+    }
+
 }
