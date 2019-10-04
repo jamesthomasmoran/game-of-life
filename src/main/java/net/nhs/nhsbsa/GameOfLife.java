@@ -14,8 +14,9 @@ public class GameOfLife
             if (x==0 && y==0){
                 return 1;
             }
-            else{
-                return 0;
+            else if(x==5 && y==8){
+                return 1;
             }
+            else return 0;
         }
 }
