@@ -14,7 +14,8 @@ public class GOLTest
     public void cellCanBeAliveOrDead(){
         GameOfLife gOL = new GameOfLife(new Cell(0,0));
 
-        assertThat(gOL.getCellState(0,0),is(1)
-        );
+        assertThat(gOL.getCellState(0,0),is(1));
+        assertThat(gOL.getCellState(0,1), is(0));
     }
+
 }

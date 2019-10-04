@@ -11,6 +11,11 @@ public class GameOfLife
 
         }
         public int getCellState(int x, int y){
-            return 1;
+            if (x==0 && y==0){
+                return 1;
+            }
+            else{
+                return 0;
+            }
         }
 }
