@@ -105,4 +105,22 @@ public class GameOfLife
     public boolean has3AliveNeighboursAndIsDead(Cell cell) {
         return has3AliveNeighbours(cell) && getCellState(cell.getXCoord(),cell.getYCoord()) == 0;
     }
+
+    public List<Cell> getBirthList() {
+        List<Cell> birthList = new ArrayList<>();
+        for (int i = 0; i < 19; i++){
+            for(int j = 0; j < 19;j++){
+                Cell next= new Cell(i,j);
+                if(has3AliveNeighboursAndIsDead(next)){
+
+                    birthList.add(next);
+                }
+
+            }
+
+
+        }
+
+        return birthList;
+    }
 }

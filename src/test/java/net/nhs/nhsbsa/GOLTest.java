@@ -198,4 +198,27 @@ public class GOLTest
         assertThat(gOL.has3AliveNeighboursAndIsDead(new Cell(2,3)), is(false));
     }
 
+    @Test
+    public void returnAllCellsThatWillBecomeAliveNextTick(){
+        GameOfLife gOL = new GameOfLife(new Cell(0,0), new Cell(0,1), new Cell(1,0),
+                new Cell(1,1), new Cell(2,2));
+
+        ArrayList<Cell> birthList = new ArrayList<Cell>();
+        birthList.add(new Cell(1,2));
+        birthList.add(new Cell(2,1));
+
+
+
+        GameOfLife gOL2 = new GameOfLife(new Cell(0,1), new Cell(0,3), new Cell(1,0),
+                new Cell(1,1), new Cell(2,3));
+
+        ArrayList<Cell> birthList2 = new ArrayList<Cell>();
+        birthList2.add(new Cell(0,0));
+        birthList2.add(new Cell(0,2));
+
+
+        assertThat(gOL.getBirthList().toString(), is(birthList.toString()));
+        assertThat(gOL2.getBirthList().toString(), is(birthList2.toString()));
+    }
+
 }
