@@ -74,4 +74,15 @@ public class GOLTest
 
         assertThat(gOL.setCellState(7, 2), is(0));
     }
+
+    @Test
+    public void getDeathList(){
+        GameOfLife gOL = new GameOfLife(new Cell(0,0), new Cell(0,1), new Cell(1,0),
+                new Cell(1,1), new Cell(2,2));
+
+        ArrayList<Cell> deathList = new ArrayList<Cell>();
+        deathList.add(new Cell(1,1));
+        deathList.add(new Cell(1,0));
+        assertThat(gOL.getDeathList().toString(), is(deathList.toString()));
+    }
 }

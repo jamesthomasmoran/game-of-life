@@ -39,4 +39,11 @@ public class GameOfLife
             grid[x][y] = 0;
             return getCellState(x,y);
         }
+
+    public ArrayList<Cell> getDeathList() {
+        ArrayList<Cell> deathList = new ArrayList<Cell>();
+        deathList.add(new Cell(1,1));
+        deathList.add(new Cell(1,0));
+        return deathList;
+    }
 }
