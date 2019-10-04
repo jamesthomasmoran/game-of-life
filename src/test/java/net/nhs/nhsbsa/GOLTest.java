@@ -106,10 +106,19 @@ public class GOLTest
 
     @Test
     public void checkIfCellHasLessThan2Neighbours(){
-        GameOfLife gOL = new GameOfLife(new Cell(1,1),new Cell(1,2),new Cell(2,2));
+        GameOfLife gOL = new GameOfLife(new Cell(1,1),new Cell(2,2));
 
         assertThat(gOL.has2OrLessAliveNeighbours(new Cell(1,1)), is(true));
         assertThat(gOL.has2OrLessAliveNeighbours(new Cell(2,1)), is(false));
+    }
+
+    @Test
+    public void checkIfCellHas2Or3neighbors(){
+        GameOfLife gOL = new GameOfLife(new Cell(0,0),new Cell(0,1),new Cell(0,2),new Cell(1,2),new Cell(2,3));
+
+        assertThat(gOL.has2Or3AliveNeighbours(new Cell(1,1)), is(false));
+        assertThat(gOL.has2Or3AliveNeighbours(new Cell(2,2)), is(true));
+
     }
 
 }
