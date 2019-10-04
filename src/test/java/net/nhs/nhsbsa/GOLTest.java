@@ -94,10 +94,19 @@ public class GOLTest
 
         ArrayList<Cell> deathList = new ArrayList<Cell>();
         deathList.add(new Cell(1,1));
-        deathList.add(new Cell(1,0));
+        deathList.add(new Cell(2,2));
 
+
+
+        GameOfLife gOL2 = new GameOfLife(new Cell(0,1), new Cell(0,3), new Cell(1,0),
+                new Cell(1,1), new Cell(2,3));
+
+        ArrayList<Cell> deathList2 = new ArrayList<Cell>();
+        deathList2.add(new Cell(0,3));
+        deathList2.add(new Cell(2,3));
 
         assertThat(gOL.getDeathList().toString(), is(deathList.toString()));
+        assertThat(gOL2.getDeathList().toString(), is(deathList2.toString()));
     }
 
     @Test

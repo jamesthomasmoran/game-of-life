@@ -41,10 +41,21 @@ public class GameOfLife
             return getCellState(x,y);
         }
 
-    public ArrayList<Cell> getDeathList() {
-        ArrayList<Cell> deathList = new ArrayList<Cell>();
-        deathList.add(new Cell(1,1));
-        deathList.add(new Cell(1,0));
+    public List<Cell> getDeathList() {
+            List<Cell> deathList = new ArrayList<>();
+        for (int i = 0; i < 19; i++){
+            for(int j = 0; j < 19;j++){
+                Cell next= new Cell(i,j);
+                 if(has2OrLessAliveNeighboursAndIsAlive(next) || has4OrMoreAliveNeighboursAndIsAlive(next)){
+                     System.out.println(next);
+                    deathList.add(next);
+                }
+
+            }
+
+
+        }
+
         return deathList;
     }
 
