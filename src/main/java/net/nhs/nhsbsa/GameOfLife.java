@@ -31,8 +31,12 @@ public class GameOfLife
         }
 
         public int setCellState(int x, int y){
-            grid[x][y] = ~grid[x][y];
-            return 1;
 
+            if(grid[x][y] == 0){
+                grid[x][y] = 1;
+                return getCellState(x,y);
+            }
+            grid[x][y] = 0;
+            return getCellState(x,y);
         }
 }
