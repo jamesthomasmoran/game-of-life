@@ -67,4 +67,10 @@ public class GOLTest
         assertThat(gOL.getCellState(6,7), is(1));
     }
 
+    @Test
+    public void changeCellState(){
+        GameOfLife gOL = new GameOfLife((new Cell(7,2)));
+
+        assertThat(gOL.setCellState(7, 2), is(1));
+    }
 }

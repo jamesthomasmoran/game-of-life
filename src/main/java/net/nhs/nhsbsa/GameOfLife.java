@@ -29,4 +29,10 @@ public class GameOfLife
         public int getCellState(int x, int y) {
             return grid[x][y];
         }
+
+        public int setCellState(int x, int y){
+            grid[x][y] = ~grid[x][y];
+            return 1;
+
+        }
 }
