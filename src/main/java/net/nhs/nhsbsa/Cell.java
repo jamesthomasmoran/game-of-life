@@ -22,14 +22,14 @@ public class Cell {
     public List<Cell> getNeighbours(){
         ArrayList<Cell> neighbourCells = new ArrayList<Cell>();
 
-        neighbourCells.add(new Cell(1 ,1));
-        neighbourCells.add(new Cell(1, 2));
-        neighbourCells.add(new Cell(1,3));
-        neighbourCells.add(new Cell(2,1));
-        neighbourCells.add(new Cell(2,3));
-        neighbourCells.add(new Cell(3,1));
-        neighbourCells.add(new Cell(3,2));
-        neighbourCells.add(new Cell(3,3));
+        neighbourCells.add(new Cell(x-1 ,y-1));
+        neighbourCells.add(new Cell(x-1, y));
+        neighbourCells.add(new Cell(x-1,y+1));
+        neighbourCells.add(new Cell(x,y-1));
+        neighbourCells.add(new Cell(x,y+1));
+        neighbourCells.add(new Cell(x+1,y-1));
+        neighbourCells.add(new Cell(x+1,y));
+        neighbourCells.add(new Cell(x+1,y+1));
 
         return neighbourCells;
     }
