@@ -49,12 +49,15 @@ public class GameOfLife
     }
 
 
-    public List<Cell> getAliveNeighbours(int i, int i1) {
-        ArrayList<Cell> aliveNeighbours = new ArrayList<Cell>();
+    public List<Cell> getAliveNeighbours(Cell primary) {
+            List <Cell> neighbours = primary.getNeighbours();
+            List<Cell> aliveNeighbours = new ArrayList<Cell>();
 
-        aliveNeighbours.add(new Cell(1,2));
-        aliveNeighbours.add(new Cell(1,3));
-        aliveNeighbours.add(new Cell(2,1));
+            for (Cell neighbour:neighbours) {
+                if(grid[neighbour.getXCoord()][neighbour.getYCoord()] == 1){
+                    aliveNeighbours.add(neighbour);
+                }
+            }
         return aliveNeighbours;
     }
 }
