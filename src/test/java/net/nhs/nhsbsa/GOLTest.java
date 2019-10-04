@@ -33,6 +33,7 @@ public class GOLTest
     public void getNeighbourCoords(){
         Cell Primarycell = new Cell(2, 2);
         Cell Primarycell2 = new Cell(3, 2);
+        Cell Primarycell3 = new Cell(0, 2);
 
         List<Cell> neighbours = new ArrayList<Cell>(8);
         neighbours.add(new Cell(1 ,1));
@@ -54,9 +55,20 @@ public class GOLTest
         neighbours2.add(new Cell(4,1));
         neighbours2.add(new Cell(4,2));
         neighbours2.add(new Cell(4,3));
+
+
+        List<Cell> neighbours3 = new ArrayList<Cell>(8);
+
+        neighbours3.add(new Cell(0,1));
+        neighbours3.add(new Cell(0,3));
+        neighbours3.add(new Cell(1,1));
+        neighbours3.add(new Cell(1,2));
+        neighbours3.add(new Cell(1,3));
         assertThat(Primarycell.getNeighbours().toString(),is(neighbours.toString()));
 
         assertThat(Primarycell2.getNeighbours().toString(), is(neighbours2.toString()));
+
+        assertThat(Primarycell3.getNeighbours().toString(), is(neighbours3.toString()));
 
     }
 

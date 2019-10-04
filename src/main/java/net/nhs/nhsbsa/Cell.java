@@ -21,14 +21,29 @@ public class Cell {
 
     public List<Cell> getNeighbours(){
         ArrayList<Cell> neighbourCells = new ArrayList<Cell>();
+        if(x > 0 && y > 0){
+            neighbourCells.add(new Cell(x-1 ,y-1));
+        }
 
-        neighbourCells.add(new Cell(x-1 ,y-1));
-        neighbourCells.add(new Cell(x-1, y));
-        neighbourCells.add(new Cell(x-1,y+1));
-        neighbourCells.add(new Cell(x,y-1));
-        neighbourCells.add(new Cell(x,y+1));
-        neighbourCells.add(new Cell(x+1,y-1));
-        neighbourCells.add(new Cell(x+1,y));
+        if(x > 0) {
+            neighbourCells.add(new Cell(x - 1, y));
+        }
+        if(x > 0 && y <= 20) {
+            neighbourCells.add(new Cell(x - 1, y + 1));
+        }
+        if(y > 0 ) {
+            neighbourCells.add(new Cell(x, y - 1));
+        }
+        if(y <= 20) {
+            neighbourCells.add(new Cell(x, y + 1));
+        }
+        if(x <= 20 && y > 0){
+            neighbourCells.add(new Cell(x+1,y-1));
+        }
+        if(x <= 20) {
+            neighbourCells.add(new Cell(x + 1, y));
+        }
+        if(x <= 20 && y <= 20)
         neighbourCells.add(new Cell(x+1,y+1));
 
         return neighbourCells;
