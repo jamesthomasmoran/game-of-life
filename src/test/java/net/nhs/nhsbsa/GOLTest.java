@@ -180,4 +180,13 @@ public class GOLTest
         assertThat(gOL.has4OrMoreAliveNeighboursAndIsAlive(new Cell(2,0)), is(false));
     }
 
+    @Test
+    public void checkIfCellHasExactly3LiveNeighboursAndIsDead(){
+        GameOfLife gOL = new GameOfLife(new Cell(0,0),new Cell(0,1),new Cell(0,2),new Cell(1,2),new Cell(2,3), new Cell(1,1),new Cell(2,4));
+
+        assertThat(gOL.has3AliveNeighboursAndIsDead(new Cell(1,1)), is(false));
+        assertThat(gOL.has3AliveNeighboursAndIsDead(new Cell(2,2)), is(true));
+        assertThat(gOL.has3AliveNeighboursAndIsDead(new Cell(2,3)), is(false));
+    }
+
 }
