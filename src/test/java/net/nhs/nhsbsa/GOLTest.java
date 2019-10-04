@@ -85,4 +85,17 @@ public class GOLTest
         deathList.add(new Cell(1,0));
         assertThat(gOL.getDeathList().toString(), is(deathList.toString()));
     }
+
+    @Test
+    public void returnAliveNeighbours(){
+        GameOfLife gOL = new GameOfLife(new Cell(1,1),new Cell(1,2),new Cell(1,3),new Cell(2,1));
+        ArrayList<Cell> aliveNeighbours = new ArrayList<Cell>();
+
+        aliveNeighbours.add(new Cell(1,2));
+        aliveNeighbours.add(new Cell(1,3));
+        aliveNeighbours.add(new Cell(2,1));
+
+        assertThat(gOL.getAliveNeighbours(1,1).toString(), is(aliveNeighbours.toString()));
+    }
+
 }

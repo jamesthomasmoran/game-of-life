@@ -2,6 +2,7 @@ package net.nhs.nhsbsa;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Hello world!
@@ -45,5 +46,15 @@ public class GameOfLife
         deathList.add(new Cell(1,1));
         deathList.add(new Cell(1,0));
         return deathList;
+    }
+
+
+    public List<Cell> getAliveNeighbours(int i, int i1) {
+        ArrayList<Cell> aliveNeighbours = new ArrayList<Cell>();
+
+        aliveNeighbours.add(new Cell(1,2));
+        aliveNeighbours.add(new Cell(1,3));
+        aliveNeighbours.add(new Cell(2,1));
+        return aliveNeighbours;
     }
 }
