@@ -74,4 +74,8 @@ public class GameOfLife
     public boolean has4OrMoreAliveNeighbours(Cell cell) {
             return getAliveNeighbours(cell).size() >= 4;
     }
+
+    public boolean has3AliveNeighbours(Cell cell) {
+        return getAliveNeighbours(cell).size() == 3;
+    }
 }
