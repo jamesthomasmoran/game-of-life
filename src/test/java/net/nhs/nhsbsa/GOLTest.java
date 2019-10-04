@@ -1,20 +1,20 @@
 package net.nhs.nhsbsa;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
+
+
+public class GOLTest
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void cellCanBeAliveOrDead(){
+        GameOfLife gOL = new GameOfLife(new Cell(0,0));
+
+        assertThat(gOL.getCellState(0,0),is(1)
+        );
     }
 }
