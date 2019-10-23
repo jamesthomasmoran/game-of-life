@@ -11,13 +11,13 @@ import java.util.List;
 public class GameOfLife
 {
 
-        Integer[][] grid = new Integer[20][20];
+        int[][] grid = new int[20][20];
 
 
 
         GameOfLife(Cell... cells){
 
-            for( Integer[] row : grid){
+            for( int[] row : grid){
                 Arrays.fill(row,0);
             }
 
@@ -47,20 +47,12 @@ public class GameOfLife
             for(int j = 0; j < 19;j++){
                 Cell next= new Cell(i,j);
                  if(has2OrLessAliveNeighboursAndIsAlive(next) || has4OrMoreAliveNeighboursAndIsAlive(next)){
-                     System.out.println(next);
                     deathList.add(next);
                 }
-
             }
-
-
         }
-
         return deathList;
     }
-
-
-
 
     public List<Cell> getAliveNeighbours(Cell primary) {
             List <Cell> neighbours = primary.getNeighbours();
@@ -115,12 +107,22 @@ public class GameOfLife
 
                     birthList.add(next);
                 }
-
             }
-
-
         }
-
         return birthList;
     }
+
+    public int[][] nextTick(List<Cell> births, List<Cell> deaths) {
+            List<Cell> changedStates = births;
+            changedStates.addAll(deaths);
+
+        for (Cell state : changedStates){
+            setCellState(state.getXCoord(),state.getYCoord());
+        }
+            return this.grid;
+        }
+
+
+
+
 }
