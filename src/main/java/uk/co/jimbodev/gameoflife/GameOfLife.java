@@ -1,13 +1,10 @@
-package net.nhs.nhsbsa;
+package uk.co.jimbodev.gameoflife;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Hello world!
- *
- */
+
 public class GameOfLife
 {
 

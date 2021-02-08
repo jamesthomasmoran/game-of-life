@@ -1,4 +1,4 @@
-package net.nhs.nhsbsa;
+package uk.co.jimbodev.gameoflife;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,9 +37,10 @@ public class RunGameOfLife {
 
         }
             }
+            System.out.println(gOL.grid);
             frame.getContentPane().repaint();
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             }
             catch(InterruptedException e){
 

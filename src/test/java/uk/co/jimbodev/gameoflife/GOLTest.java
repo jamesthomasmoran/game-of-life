@@ -1,4 +1,4 @@
-package net.nhs.nhsbsa;
+package uk.co.jimbodev.gameoflife;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

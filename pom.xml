@@ -4,13 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>net.nhs.nhsbsa</groupId>
+  <groupId>uk.co.jimbodev</groupId>
   <artifactId>game-of-life</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>game-of-life</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -68,6 +66,14 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>3.0.0</version>
+          <configuration>
+            <mainClass>uk.co.jimbodev.gameoflife.RunGameOfLife </mainClass>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
