@@ -20,7 +20,7 @@ Project created with:
 - Java
 - Java AWT
 
-##Setup 
+## Setup 
 To run locally, ensure Java 8 or above is installed and run the maven command:
 ```bash
 mvn compile exec:java
